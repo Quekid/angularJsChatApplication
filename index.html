@@ -1,0 +1,34 @@
+<!DOCTYPE html">
+<html lang="en">
+<!-- Head and title -->
+
+<head>
+  <title>Ganesh Devkate-Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Libraries and external css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Custom css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<!-- Body -->
+<body ng-app="chatapp">
+  <div ui-view></div>
+</body>
+
+<!-- Scripts and libraries -->
+<script src="assets/libs/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+<!-- Chat module -->
+<script src="chatApp/_init.js"></script>
+<!-- controllers -->
+<script src="chatApp/controller/chatLaunch.controller.js"></script>
+
+<!-- Application -->
+<script src="app/_init.js"></script>
+<script src="app/app.js"></script>
+
+</html>

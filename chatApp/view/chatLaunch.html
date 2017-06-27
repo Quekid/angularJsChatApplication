@@ -1,0 +1,31 @@
+<!-- welcom view for the test -->
+<div class="container">
+  <h2 ng-bind="'Welcome To Chat Application'"></h2>
+  <input type="text" class="master-height-input-text" ng-model="userName">
+  <a class="btn btn-sm btn-default" ng-click="joinUser(userName)">Join</a>
+  <br>
+  <div class="wrapper">
+    <div class="chat-window" ng-repeat="user in users">
+      <div class="chat-window-header">
+        <div>{{user.name}} <span class="pull-right hr-green" ng-click="removeUser($index)">LogOut</span></div>
+      </div>
+      <div class="chat-text">
+        <div ng-repeat="msg in (getChatDetails(user.name,users[$index].reciver)) track by $index">
+          <div style="display: flow-root;">
+            <span class="sm-margin">
+             {{msg.sender? msg.sender +' > '+ msg.message : ''}}
+            </span>
+         </div>
+        </div>
+      </div>
+      <div class="chat-window-footer">
+        <select ng-model="users[$index].reciver">
+          <option ng-repeat="usr in users"  ng-if="usr.name != user.name">{{usr.name}}</option>
+        </select>
+        <br>
+        <input type="text"  clas="master-height-input-text" ng-model="users[$index].typedMessage">
+        <a class="btn btn-default btn-sm" ng-click="sendMessage(user.name,users[$index].reciver,users[$index].typedMessage); users[$index].typedMessage=null;">Send</a>
+      </div>
+    </div>
+  </div>
+</div>
